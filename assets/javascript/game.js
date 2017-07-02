@@ -24,8 +24,11 @@ numGuesses = 12;
 blanksAndSuccesses = [];
 wrongGuesses = [];
 
+// this gives us a random word from the list
 currentWord = words[Math.floor(Math.random() * words.length)];
+// the word is broken down into separate letters
 lettersInCurrentWord = currentWord.split("");
+// counts how many letters are in the current word
 numBlanks = lettersInCurrentWord.length;
 
 
@@ -67,7 +70,7 @@ for (var i = 0; i < numBlanks; i++) {
 		wrongGuesses.push(letter)
 	}
 	
-}
+} 
 
 function roundComplete() {
 
