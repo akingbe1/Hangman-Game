@@ -7,7 +7,7 @@ var blanksAndSuccesses = [];
 var wrongGuesses = [];
 
 var winCounter = 0;
-var lossCounter = 1;
+var lossCounter = 0;
 var numGuesses = 12;
 
 
@@ -82,6 +82,10 @@ function roundComplete() {
 
 */
 
+// First, log an initial status update in the console telling us how many wins, losses, and guesses are left.
+console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | NumGuesses: " + numGuesses);
+
+
 document.getElementById("blank-word").innerHTML = blanksAndSuccesses.join(" ");
 document.getElementById("remaining").innerHTML = numGuesses;
 document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
@@ -89,17 +93,19 @@ document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
 
 
 
-if (lettersInCurrentWord.join(" ") === blanksAndSuccesses.join("")) {
+if (lettersInCurrentWord.toString() === blanksAndSuccesses.toString()) {
 	winCounter++;
 	alert("You win!");
 	document.getElementById("win-counter").innerHTML = winCounter;
 	startGame();
 }
 else if (numGuesses === 0) {
-	document.getElementById("loss-counter").innerHTML = lossCounter++;
-	document.getElementById("wrong-guesses").innerHTML = "";
+//	document.getElementById("loss-counter").innerHTML = lossCounter++;
+//	document.getElementById("wrong-guesses").innerHTML = "";
+	lossCounter++;
 	alert("You lose...");
-	wrongGuesses = [];
+	document.getElementById("loss-counter").innerHTML = lossCounter;
+//	wrongGuesses = [];
 	startGame();
 }
 
