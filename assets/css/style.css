@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Knewave|McLaren');
+
+body {
+	background: url(../images/NBA2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h1, h4, p {
+	color: white;
+	font-family: 'McLaren', cursive;
+}
